@@ -1,8 +1,7 @@
 
 # Technique: Fixed Sliding Window
-# Time Complexity
+# Time Complexity: DNF
 # Time Spent: 40 minutes
-
 
 
 """
@@ -66,3 +65,6 @@ def MaxMeanSubArray(arr, k):
     # Realized my main issue towards the end while debugging.
     # I was incorrectly calculating indexes and instead getting exact values which
     # threw off my calucations. Example in FIXME comment.
+ 
+ #Future Reference of Solution:
+#  https://leetcode.com/problems/maximum-average-subarray-i/solutions/127562/maximum-average-subarray/ 

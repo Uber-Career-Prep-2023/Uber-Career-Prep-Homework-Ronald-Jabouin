@@ -6,8 +6,8 @@
 # Time Spent: 25 minutes
 
 
-array = [1]
-size = 2
+array = [2,3,4,5]
+size = 5
 def missingInteger(arr, size):
 
     toReturn = 0

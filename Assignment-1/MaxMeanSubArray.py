@@ -31,40 +31,23 @@ Output: 1.5
 
 
 def MaxMeanSubArray(arr, k):
-    #variable to update as new values are computed
-    largestMean = 0
-    
-    # Pointer starting at 0
-    for x in arr:
-        print(f"x is {x}")
 
-        #if x is not the last position that allows window size to fit in array
-        if x is not arr[-k]:
-            # FIXME: the x here is not the index, it's the exact value. 
-            secondPointer = arr[x+(k-1)]
-            print(arr[x])
-            print(f"x is {x} and secondPointer is {secondPointer}")
-            print(arr[x:secondPointer])
-            print("--------")
-            meanSum = sum(arr[x:secondPointer])
-            mean = meanSum / k
-
-            if mean > largestMean:
-                largestMean = mean
+    leftPointer = 0
+    rightPointer = k
+    maxMean = 0
     
-    # #Pointer starting at k-1
-    #     for y in arr[k-1:]:
-    #         # print(x+y)
-    #         mean = x + y / k
-    #         if mean > largestMean:
-    #             largestMean = mean
-    
-    return largestMean
+    if not arr or len(arr) < k:
+        return 
 
-#Reflection:
-    # Realized my main issue towards the end while debugging.
-    # I was incorrectly calculating indexes and instead getting exact values which
-    # threw off my calucations. Example in FIXME comment.
- 
- #Future Reference of Solution:
-#  https://leetcode.com/problems/maximum-average-subarray-i/solutions/127562/maximum-average-subarray/ 
+    while rightPointer < len(arr) + 1:
+        maxMean = max(maxMean, sum(arr[leftPointer:rightPointer]) / k)
+        leftPointer += 1
+        rightPointer += 1
+    return maxMean
+
+if __name__ == "__main__":
+    print(MaxMeanSubArray([4, 5, -3, 2, 6, 1], 2))
+    print(MaxMeanSubArray([4, 5, -3, 2, 6, 1], 3))
+    print(MaxMeanSubArray([1, 1, 1, 1, -1, -1, 2, -1, -1], 3))
+    print(MaxMeanSubArray([1, 1, 1, 1, -1, -1, 2, -1, -1, 6], 5))
+

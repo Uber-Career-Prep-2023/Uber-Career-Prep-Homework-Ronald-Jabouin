@@ -8,14 +8,24 @@
 
 input = [0, 0, 1, 4, 5, 5, 5, 8, 9, 9, 10, 11, 15, 15]
 
-def dedupArray(arr):
-    mySet = set()
 
-    for number in arr:
-        mySet.add(number)
-    
-    arr = list(mySet) 
+def dedupArray(arr):
+    for number in len(arr-1):
+        if arr[number+1] == number:
+            del number+1
     
     return arr
+            
+
+
+# def dedupArray(arr):
+#     mySet = set()
+
+#     for number in arr:
+#         mySet.add(number)
+    
+#     arr = list(mySet) 
+    
+#     return arr
 
 print(dedupArray(input))

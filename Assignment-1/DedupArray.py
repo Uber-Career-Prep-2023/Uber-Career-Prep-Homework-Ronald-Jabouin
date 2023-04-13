@@ -1,19 +1,23 @@
-# Technique: One direction computation
-# Time Complexity: O(n)
-    #looping through each element in array
-# Space Complexity: 0(n)
-    # created set that in worse case is same size of input
-# Time Spent: 20 minutes
+# Technique: 
+# Time Complexity: 
+# Space Complexity: 
+
+# Time Spent: 
 
 
 input = [0, 0, 1, 4, 5, 5, 5, 8, 9, 9, 10, 11, 15, 15]
 
 
 def dedupArray(arr):
-    for number in len(arr-1):
-        if arr[number+1] == number:
-            del number+1
-    
+    mySet = set()
+    index = 0
+    while index < len(arr):
+        if arr[index] in mySet:
+            del arr[index]
+            index -= 1
+        else:
+            mySet.add(arr[index])
+        index+=1
     return arr
             
 

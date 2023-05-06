@@ -1,11 +1,11 @@
-class Node:
+class BSTNode:
     def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None
 
 class BinarySearchTree:
-    def __init__(self, root: Node):
+    def __init__(self, root: BSTNode):
         self.root = root
 
     # // returns the minimum value in the BST
@@ -16,6 +16,8 @@ class BinarySearchTree:
 
         if self.root.left != None:
             return min(self.root.left)
+
+
 
 
 
@@ -39,7 +41,7 @@ class BinarySearchTree:
     def insert(self, val: int):
         if self.contains(val):
             print("Value is already in tree")
-        newNode = Node(val)
+        newNode = BSTNode(val)
     # TODO: implement rest of logic
     
     # // deletes the Node with data val, if it exists
@@ -47,4 +49,8 @@ class BinarySearchTree:
         if not self.contains(val):
             raise Exception("Value not in tree")
     # TODO: implement rest of logic
-        
+    
+
+
+
+

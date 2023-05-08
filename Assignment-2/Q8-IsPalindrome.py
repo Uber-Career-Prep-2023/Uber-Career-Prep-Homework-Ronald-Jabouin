@@ -8,7 +8,7 @@ import DoublyLinkedList as LL
 # Check if the string or array is the same normal as backwards
 
 
-# Technique: 
+# Technique: Standard List Traversal
 # ST Complexity: O(n) - go through the list once
 # Time: 20 minutes
 

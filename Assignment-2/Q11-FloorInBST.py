@@ -17,7 +17,7 @@ import BinarySearchTree as BST
 #   O(n): go through the list once
 #   O(1) operations for adding and checking values in set
     # overall: O(n)
-# Time: 15 minutes
+# Time: 30 minutes
 
 
 def floorInBST(rootNode: BST.BSTNode, targetVal: int):

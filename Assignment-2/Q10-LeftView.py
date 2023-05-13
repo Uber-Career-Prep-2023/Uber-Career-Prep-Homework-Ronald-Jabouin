@@ -5,10 +5,10 @@ import BinarySearchTree as BST
 
 
 # Logic For Solving:
-# Level Order traversal and looking for left most value
+# Level Order traversal add first value of each level to a list
 
 
-# Technique: Brute Force / Checking All Nodes
+# Technique: Level-order (breadth-first) traversal
 # ST Complexity: 
 
 # Time:

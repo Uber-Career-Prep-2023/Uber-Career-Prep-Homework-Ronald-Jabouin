@@ -89,10 +89,15 @@ class LinkedList:
     def length(self):
         return self.size
     
-    # // reverses the linked list iteratively
-    # TODO
     def reverseIterative(self):
-        pass
+        prev = None
+        currentNode = self.head
+        while currentNode != None:
+            next = currentNode.next
+            currentNode.next = prev
+            prev = currentNode
+            currentNode = next
+        self.head = prev
     
     # // reverses the linked list recursively (Hint: you will need a helper function)
     def reverseRecursive(self):

@@ -12,8 +12,6 @@ import BinarySearchTree as BST
 # Time: 15 minutes
 
 
-
-        
 def deepCopy(node: BST.BSTNode, newTree: BST.BinarySearchTree):
     
     # Add node to new tree

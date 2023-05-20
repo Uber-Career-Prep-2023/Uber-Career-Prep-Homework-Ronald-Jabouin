@@ -4,7 +4,7 @@ import BinarySearchTree as BST
 # (leftmost elements in each level) of the tree.
 
 
-# Logic For Solving:
+# My Logic For Solving:
 # Level Order traversal add first value of each level to a list
 
 
@@ -14,14 +14,18 @@ import BinarySearchTree as BST
 # Time:
 
 
+# 1 idea
+# BFS of sub arrays. Take each  first element of sub arrays
+# 1st array of level 1, 2nd array for lvl2, ...
+
 def leftView(tree: BST.BinarySearchTree):
     
     # initialize return array and add the root data
     toReturn = []
-    toReturn.append(tree.root.data)
+    level = 1
 
     # At a node, see if theres a left. if there is, add it to the array
     # if theres no left but a right, go left as possible from here
 
 
-    return toReturn
+    

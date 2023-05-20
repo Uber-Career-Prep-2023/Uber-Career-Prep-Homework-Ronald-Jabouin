@@ -17,10 +17,6 @@ class BinarySearchTree:
         if self.root.left != None:
             return min(self.root.left)
 
-
-
-
-
     # // returns the maximum value in the BST
     # recursively check right node until a right node has no child
     def max(self):
@@ -29,7 +25,6 @@ class BinarySearchTree:
         
         if self.root.right != None:
             return max(self.root.right)
-    
     
     
     # // returns a boolean indicating whether val is present in the BST
@@ -67,5 +62,27 @@ class BinarySearchTree:
     
 
 
+
+def positionOf(head: BSTNode, target: BSTNode ):
+    # position = 1
+    # if head == target:
+    #     return position
+    
+    # currNode = head
+
+    # while currNode.hasNext:
+    #     currNode = currNode.next
+    #     position += 1
+    #     if currNode == target:
+    #         return position
+        
+    # Recursively
+    if head == None:
+        raise Exception("Null")
+    
+    if head == target:
+        return 1
+    
+    positionOf(head.next, target)
 
 

@@ -1,31 +1,39 @@
 import BinarySearchTree as BST
+import collections
+
 
 # Given a binary tree, create an array of the left view 
 # (leftmost elements in each level) of the tree.
 
 
 # My Logic For Solving:
-# Level Order traversal add first value of each level to a list
+# BFS / Level order traversal
+# Use a queue to keep track of the different levels
 
 
-# Technique: Level-order (breadth-first) traversal
-# ST Complexity: 
-
-# Time:
-
-
-# 1 idea
-# BFS of sub arrays. Take each  first element of sub arrays
-# 1st array of level 1, 2nd array for lvl2, ...
-
-def leftView(tree: BST.BinarySearchTree):
+def leftView(root: BST.BSTNode):
     
     # initialize return array and add the root data
     toReturn = []
-    level = 1
+    queue = collections.deque([root])
 
-    # At a node, see if theres a left. if there is, add it to the array
-    # if theres no left but a right, go left as possible from here
+    # while the queue is not empty
+    while queue:
+        leftSide = None
+        for i in range(len(queue)):
+            currNode = queue.popleft()
+            if currNode:
+                leftSide = currNode
+                queue.append(currNode.right)
+                queue.append(currNode.left)
+        
+        # Check that left side is not null before appending
+        if leftSide:
+            toReturn.append(leftSide)
+
+        return toReturn
+
+
 
 
     

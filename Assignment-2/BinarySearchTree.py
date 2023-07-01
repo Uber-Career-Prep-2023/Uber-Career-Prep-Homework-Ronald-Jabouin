@@ -47,18 +47,35 @@ class BinarySearchTree:
     
     # // For simplicity, do not allow duplicates. If val is already present, insert is a no-op
     # // creates a new Node with data val in the appropriate location
-    def insert(self, val: int):
-        if self.contains(val):
+    def insert(self, data: int):
+        if self.contains(data):
             print("Value is already in tree")
-        newNode = BSTNode(val)
-    # TODO: implement rest of logic to properly place it into the tree
+        if data < self.root:
+            if not self.left:
+                self.left = BSTNode(data)
+            else:
+                self.left.insert(data)
+        elif data > self.root:
+            if not self.right:
+                self.right = BSTNode(data)
+            else:
+                self.right.insert(data)
+
     
     # // deletes the Node with data val, if it exists
-    def delete(self, val: int):
-        if not self.contains(val):
+    def delete(self, data: int):
+        if not self.contains(data):
             raise Exception("Value not in tree")
-    # TODO: implement rest of logic
-        # need to handle rebalancing tree properly
+        if data < self.data:
+            if not self.left:
+                return None
+            else:
+                self.left = self.left.delete(data)
+        elif data > self.data:
+            if not self.right:
+                return None
+            else:
+                self.right = self.right.delete(data)
     
 
 

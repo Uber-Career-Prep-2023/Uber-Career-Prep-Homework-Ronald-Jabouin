@@ -109,25 +109,19 @@ class LinkedList:
             currentNode = next
         self.head = prev
          
-    # // reverses the linked list recursively 
-    # (Hint: you will need a helper function)
-    
-    # root = null
-    # def reverseRecursive(self): 
-    #     if node == None:
-    #         return None
+
+    def reverseRecursive(self, root): 
+        if self.head == None:
+            return None
        
-    #     nextNode = reverseRecursive(node.next)
+        nextNode = reverseRecursive(self,self.head.next)
         
+        if self.head.next != None:
+            root = self.node
+            return root
         
-    #     if node.next != None:
-    #         root = node
-    #         return node
-        
-    #     nextNode.next = node
-    #     return node
+        nextNode.next = self.node
+        return self.node
 
         
 
-
-# TODO: test cases

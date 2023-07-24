@@ -8,7 +8,6 @@
 
 
 # dequeu, enqueu with 0 and 1
-# 
 
 from collections import deque
 
@@ -19,24 +18,23 @@ def binaryNumbers(k: int):
     myQueue = deque()
     myQueue.append("1")
     
-    # hard first 0, start algo at 1 
+    # hard code first 0, start algo at 1 
     result = []
     result.append("0")
     
-    counter = 0
-    temp = "1"
+    counter = 1
 
-    print(temp + "z")
-
-    while counter != k:
+    while counter < k:
         #add current value plus 0 
-        myQueue.append(temp + "0")
+        myQueue.append(myQueue[0] + "0")
         # add current value plus 1 at end
-        myQueue.append(temp + "1")
+        myQueue.append(myQueue[0] + "1")
         # pop oldest value and add it to result 
         temp = myQueue.popleft()
         result.append(temp)
         counter += 1
     
+    return result
+    
 
-binaryNumbers(10)
+print(binaryNumbers(5))

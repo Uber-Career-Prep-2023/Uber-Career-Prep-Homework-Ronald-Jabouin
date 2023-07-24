@@ -1,7 +1,7 @@
 
 
 # Given a number, k, return an array of the first k binary numbers, represented as strings.
-# Time:
+# Time: 35 minutes
 # Implementation: Queue
 #   pattern of removing and enqueing 1s and 0s
     # Start with 1 and add 0 to the beginning at the end

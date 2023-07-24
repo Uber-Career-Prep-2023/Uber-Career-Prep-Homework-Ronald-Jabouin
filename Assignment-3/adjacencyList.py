@@ -41,11 +41,5 @@ if __name__ == "__main__" :
     adjacencyList([(1, 2), (2, 3), (1, 3), (3, 2), (2, 0)])
 
 
-def bfs(target: int, graph: dict):
-    # study bfs solution
-    #  bfs solution for this problem
-    pass
 
 
-def dfs(target: int, graph: dict):
-    pass

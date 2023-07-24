@@ -1,5 +1,5 @@
 # Given a string, return the string with the order of the space-separated words reversed
-# Time: 
+# Time: 20 minutes
 # Implementation: Stack
     # get each word thats seperated by a space
     # add that to a stack

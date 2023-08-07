@@ -3,18 +3,17 @@ Given an origin and a destination in a directed graph in which edges can be blue
 determine the length of the shortest path from the origin to the destination in which the edges 
 traversed alternate in color. Return -1 if no such path exists.
 
-Implentated BFS
 """
 
-from collections import deque
+from collections import deque, defaultdict
 def alternatingPath(edges, origin, destination):
     graph = {}
 
-    for origin, dest, color in edges:
+    for org, dest, color in edges:
 
-        if origin not in graph:
-            graph[origin] = []
-        graph[origin].append((dest, color))
+        if org not in graph:
+            graph[org] = []
+        graph[org].append((dest, color))
 
     queue = deque([(origin, 0, None)])  
     visited = set()
